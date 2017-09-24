@@ -7,25 +7,35 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1853A5341F54B984008D5ADE /* FlickrFetcherModification.m in Sources */ = {isa = PBXBuildFile; fileRef = 1853A5331F54B984008D5ADE /* FlickrFetcherModification.m */; };
 		189D9BA71F438C1F00C22798 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 189D9BA61F438C1F00C22798 /* main.m */; };
 		189D9BAA1F438C1F00C22798 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 189D9BA91F438C1F00C22798 /* AppDelegate.m */; };
-		189D9BAD1F438C1F00C22798 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 189D9BAC1F438C1F00C22798 /* ViewController.m */; };
-		189D9BB01F438C1F00C22798 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 189D9BAE1F438C1F00C22798 /* Main.storyboard */; };
 		189D9BB21F438C1F00C22798 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 189D9BB11F438C1F00C22798 /* Assets.xcassets */; };
 		189D9BB51F438C1F00C22798 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 189D9BB31F438C1F00C22798 /* LaunchScreen.storyboard */; };
+		189D9BBF1F438C6000C22798 /* FlickrFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 189D9BBD1F438C6000C22798 /* FlickrFetcher.m */; };
+		18F0785E1F5000CD006C55C4 /* TopTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F0785D1F5000CD006C55C4 /* TopTableViewController.m */; };
+		18F078611F500102006C55C4 /* RecentsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F078601F500102006C55C4 /* RecentsTableViewController.m */; };
+		18F078641F50031C006C55C4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18F078621F50031C006C55C4 /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1853A5321F54B984008D5ADE /* FlickrFetcherModification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlickrFetcherModification.h; sourceTree = "<group>"; };
+		1853A5331F54B984008D5ADE /* FlickrFetcherModification.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlickrFetcherModification.m; sourceTree = "<group>"; };
 		189D9BA21F438C1F00C22798 /* Top Places.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Top Places.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		189D9BA61F438C1F00C22798 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		189D9BA81F438C1F00C22798 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		189D9BA91F438C1F00C22798 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		189D9BAB1F438C1F00C22798 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		189D9BAC1F438C1F00C22798 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		189D9BAF1F438C1F00C22798 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		189D9BB11F438C1F00C22798 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		189D9BB41F438C1F00C22798 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		189D9BB61F438C1F00C22798 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		189D9BBC1F438C6000C22798 /* FlickrAPIKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlickrAPIKey.h; sourceTree = "<group>"; };
+		189D9BBD1F438C6000C22798 /* FlickrFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlickrFetcher.m; sourceTree = "<group>"; };
+		189D9BBE1F438C6000C22798 /* FlickrFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlickrFetcher.h; sourceTree = "<group>"; };
+		18F0785C1F5000CD006C55C4 /* TopTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopTableViewController.h; sourceTree = "<group>"; };
+		18F0785D1F5000CD006C55C4 /* TopTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopTableViewController.m; sourceTree = "<group>"; };
+		18F0785F1F500102006C55C4 /* RecentsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecentsTableViewController.h; sourceTree = "<group>"; };
+		18F078601F500102006C55C4 /* RecentsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecentsTableViewController.m; sourceTree = "<group>"; };
+		18F078631F50031C006C55C4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,14 +68,21 @@
 		189D9BA41F438C1F00C22798 /* Top Places */ = {
 			isa = PBXGroup;
 			children = (
-				189D9BA81F438C1F00C22798 /* AppDelegate.h */,
-				189D9BA91F438C1F00C22798 /* AppDelegate.m */,
-				189D9BAB1F438C1F00C22798 /* ViewController.h */,
-				189D9BAC1F438C1F00C22798 /* ViewController.m */,
-				189D9BAE1F438C1F00C22798 /* Main.storyboard */,
+				189D9BBC1F438C6000C22798 /* FlickrAPIKey.h */,
+				189D9BBE1F438C6000C22798 /* FlickrFetcher.h */,
+				189D9BBD1F438C6000C22798 /* FlickrFetcher.m */,
+				1853A5321F54B984008D5ADE /* FlickrFetcherModification.h */,
+				1853A5331F54B984008D5ADE /* FlickrFetcherModification.m */,
+				18F0785C1F5000CD006C55C4 /* TopTableViewController.h */,
+				18F0785D1F5000CD006C55C4 /* TopTableViewController.m */,
+				18F0785F1F500102006C55C4 /* RecentsTableViewController.h */,
+				18F078601F500102006C55C4 /* RecentsTableViewController.m */,
+				18F078621F50031C006C55C4 /* Main.storyboard */,
 				189D9BB11F438C1F00C22798 /* Assets.xcassets */,
 				189D9BB31F438C1F00C22798 /* LaunchScreen.storyboard */,
 				189D9BB61F438C1F00C22798 /* Info.plist */,
+				189D9BA81F438C1F00C22798 /* AppDelegate.h */,
+				189D9BA91F438C1F00C22798 /* AppDelegate.m */,
 				189D9BA51F438C1F00C22798 /* Supporting Files */,
 			);
 			path = "Top Places";
@@ -105,7 +122,7 @@
 		189D9B9A1F438C1F00C22798 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0830;
+				LastUpgradeCheck = 0900;
 				ORGANIZATIONNAME = Mari;
 				TargetAttributes = {
 					189D9BA11F438C1F00C22798 = {
@@ -138,9 +155,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18F078641F50031C006C55C4 /* Main.storyboard in Resources */,
 				189D9BB51F438C1F00C22798 /* LaunchScreen.storyboard in Resources */,
 				189D9BB21F438C1F00C22798 /* Assets.xcassets in Resources */,
-				189D9BB01F438C1F00C22798 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -151,8 +168,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				189D9BAD1F438C1F00C22798 /* ViewController.m in Sources */,
+				18F0785E1F5000CD006C55C4 /* TopTableViewController.m in Sources */,
+				18F078611F500102006C55C4 /* RecentsTableViewController.m in Sources */,
+				1853A5341F54B984008D5ADE /* FlickrFetcherModification.m in Sources */,
 				189D9BAA1F438C1F00C22798 /* AppDelegate.m in Sources */,
+				189D9BBF1F438C6000C22798 /* FlickrFetcher.m in Sources */,
 				189D9BA71F438C1F00C22798 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -160,20 +180,20 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		189D9BAE1F438C1F00C22798 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				189D9BAF1F438C1F00C22798 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		189D9BB31F438C1F00C22798 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				189D9BB41F438C1F00C22798 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		18F078621F50031C006C55C4 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				18F078631F50031C006C55C4 /* Base */,
+			);
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -189,7 +209,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -197,7 +219,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -237,7 +263,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -245,7 +273,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -278,6 +310,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Mari.Top-Places";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -290,6 +323,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Mari.Top-Places";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -312,6 +346,7 @@
 				189D9BBB1F438C1F00C22798 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

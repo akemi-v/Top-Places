@@ -10,7 +10,7 @@
 
 @implementation FlickrFetcherModification
 
-+ (void)downloadTopPlaces:(void (^)(NSArray *photos, NSError *error))completionHandler
++ (void)downloadTopPlaces:(void (^)(NSArray *places, NSError *error))completionHandler
 {
     NSURLSession *session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration ephemeralSessionConfiguration]];
     NSURL *url = [FlickrFetcher URLforTopPlaces];
@@ -22,6 +22,23 @@
                                                     }
                                                     dispatch_async(dispatch_get_main_queue(), ^{
                                                         completionHandler(places, error);
+                                                    });
+                                                }];
+    [task resume];
+}
+
++ (void)downloadPhotosForPlace:(NSDictionary *)place numOfResults:(NSUInteger)results onCompletion:(void (^)(NSArray *photos, NSError *error))completionHandler
+{
+    NSURLSession *session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration ephemeralSessionConfiguration]];
+    NSURL *url = [FlickrFetcherModification URLforPhotosInPlace:[place valueForKeyPath:FLICKR_PLACE_ID] maxResults:results];
+    NSURLSessionDownloadTask *task = [session downloadTaskWithURL:url
+                                                completionHandler:^(NSURL *location, NSURLResponse *response, NSError *error) {
+                                                    NSArray *photos;
+                                                    if (!error) {
+                                                        photos = [[NSJSONSerialization JSONObjectWithData:[NSData dataWithContentsOfURL:location] options:0 error:&error] valueForKeyPath:FLICKR_RESULTS_PHOTOS];
+                                                    }
+                                                    dispatch_async(dispatch_get_main_queue(), ^{
+                                                        completionHandler(photos, error);
                                                     });
                                                 }];
     [task resume];

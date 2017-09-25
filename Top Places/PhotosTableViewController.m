@@ -1,49 +1,41 @@
 //
-//  TopTableViewController.m
+//  PhotosTableViewController.m
 //  Top Places
 //
-//  Created by Apple on 8/25/17.
+//  Created by Apple on 9/25/17.
 //  Copyright © 2017 Mari. All rights reserved.
 //
 
-#import "TopTableViewController.h"
-#import "FlickrFetcherModification.h"
 #import "PhotosTableViewController.h"
+#import "FlickrFetcherModification.h"
 
-@interface TopTableViewController ()
+@interface PhotosTableViewController ()
 
-@property (nonatomic, strong) NSArray *countries;
-@property (nonatomic, strong) NSDictionary *placesByCountry;
+@property (nonatomic, strong) NSArray *photos;
 
 @end
 
-@implementation TopTableViewController
+@implementation PhotosTableViewController
 
-- (void)setTopPlaces:(NSArray *)topPlaces {
-    if (_topPlaces == topPlaces) return;
-    _topPlaces = [FlickrFetcherModification sortPlaces:topPlaces];
-    self.placesByCountry = [FlickrFetcherModification placesByCountries:_topPlaces];
-    self.countries = [FlickrFetcherModification countries:self.placesByCountry];
+- (void)setPhotos:(NSArray *)photos
+{
+    _photos = photos;
     [self.tableView reloadData];
 }
+
+#define MAX_PHOTO_RESULTS 50
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    
     [self.refreshControl beginRefreshing];
     [self.tableView setContentOffset:CGPointMake(0, -self.tableView.frame.size.height) animated:YES];
-    [FlickrFetcherModification downloadTopPlaces:^(NSArray *places, NSError *error) {
+    [FlickrFetcherModification downloadPhotosForPlace:self.place numOfResults:MAX_PHOTO_RESULTS onCompletion:^(NSArray *photos, NSError *error) {
         if (!error) {
-            self.topPlaces = places;
+            self.photos = photos;
             [self.refreshControl endRefreshing];
         } else {
-            NSLog(@"Error downloading data");
+            NSLog(@"Error downloading photos");
         }
     }];
 }
@@ -56,29 +48,20 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return [self.countries count];
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [self.placesByCountry[self.countries[section]] count];
-}
-
-- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-    return self.countries[section];
+    return [self.photos count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Flickr Place Cell" forIndexPath:indexPath];
-    NSDictionary *place = self.placesByCountry[self.countries[indexPath.section]][indexPath.row];
-    cell.textLabel.text = [FlickrFetcherModification titleOfPlace:place];
-    cell.detailTextLabel.text = [FlickrFetcherModification subtitleOfPlace:place];
-  
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Photo Cell" forIndexPath:indexPath];
+    NSDictionary *photo = self.photos[indexPath.row];
+    cell.textLabel.text = [photo valueForKey:FLICKR_PHOTO_TITLE];
+    cell.detailTextLabel.text = [photo valueForKey:FLICKR_PHOTO_DESCRIPTION];
+    
     return cell;
-}
-
-- (void)preparePhotosTableViewController:(PhotosTableViewController *)TVC forPlace:(NSDictionary *)place {
-    TVC.place = place;
-    TVC.title = [FlickrFetcherModification titleOfPlace:place];
 }
 
 /*
@@ -115,18 +98,14 @@
 }
 */
 
-
+/*
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
-    NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
-    if ([segue.identifier isEqualToString:@"Show Place"] && indexPath) {
-        [self preparePhotosTableViewController:segue.destinationViewController forPlace:self.placesByCountry[self.countries[indexPath.section]][indexPath.row]];
-    }
 }
-
+*/
 
 @end

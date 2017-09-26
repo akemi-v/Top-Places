@@ -117,7 +117,7 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
     if ([segue.identifier isEqualToString:@"Show Photo"] && indexPath) {
-        [self preparePhotoViewController:segue.destinationViewController forPhoto:self.photos[indexPath.row]];
+        [self preparePhotoViewController:[segue.destinationViewController.childViewControllers firstObject] forPhoto:self.photos[indexPath.row]];
     }
 }
 

@@ -27,7 +27,7 @@
     [task resume];
 }
 
-+ (void)downloadPhotosForPlace:(NSDictionary *)place numOfResults:(NSUInteger)results onCompletion:(void (^)(NSArray *photos, NSError *error))completionHandler
++ (void)downloadPhotosForPlace:(NSDictionary *)place numOfResults:(int)results onCompletion:(void (^)(NSArray *photos, NSError *error))completionHandler
 {
     NSURLSession *session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration ephemeralSessionConfiguration]];
     NSURL *url = [FlickrFetcherModification URLforPhotosInPlace:[place valueForKeyPath:FLICKR_PLACE_ID] maxResults:results];

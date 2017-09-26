@@ -11,7 +11,7 @@
 @interface FlickrFetcherModification : FlickrFetcher
 
 + (void)downloadTopPlaces:(void (^)(NSArray *places, NSError *error))completionHandler;
-+ (void)downloadPhotosForPlace:(NSDictionary *)place numOfResults:(NSUInteger)results onCompletion:(void (^)(NSArray *photos, NSError *error))completionHandler;
++ (void)downloadPhotosForPlace:(NSDictionary *)place numOfResults:(int)results onCompletion:(void (^)(NSArray *photos, NSError *error))completionHandler;
 
 + (NSString *)countryOfPlace:(NSDictionary *)place;
 + (NSString *)titleOfPlace:(NSDictionary *)place;

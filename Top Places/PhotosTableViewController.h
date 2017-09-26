@@ -10,6 +10,6 @@
 
 @interface PhotosTableViewController : UITableViewController
 
-@property (nonatomic, strong) NSDictionary *place;
+@property (strong, nonatomic) NSDictionary *place;
 
 @end

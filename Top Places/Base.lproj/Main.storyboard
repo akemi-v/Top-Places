@@ -25,6 +25,9 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="a9U-GB-dab" kind="show" identifier="Show Photo" id="1b0-d4-mfE"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -103,6 +106,9 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="a9U-GB-dab" kind="show" identifier="Show Photo" id="5yU-S8-9MJ"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -114,6 +120,38 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AlS-Ft-kEf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1132" y="-1060"/>
+        </scene>
+        <!--Photo View Controller-->
+        <scene sceneID="7YT-9e-XMJ">
+            <objects>
+                <viewController id="a9U-GB-dab" customClass="PhotoViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="fCF-vm-Yyy"/>
+                        <viewControllerLayoutGuide type="bottom" id="FQD-g0-tG7"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="2Ul-4l-4Cc">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xiR-Z0-RgX">
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </scrollView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="hIp-JO-eIn">
+                                <rect key="frame" x="177" y="323" width="20" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="activityIndicator" destination="hIp-JO-eIn" id="qs2-oM-DmR"/>
+                        <outlet property="scrollView" destination="xiR-Z0-RgX" id="kbI-d9-obF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vsQ-Zo-KMo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1941.5999999999999" y="-704.79760119940033"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="XEo-54-5om">
@@ -172,4 +210,7 @@
             <point key="canvasLocation" x="-583" y="-348"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="1b0-d4-mfE"/>
+    </inferredMetricsTieBreakers>
 </document>

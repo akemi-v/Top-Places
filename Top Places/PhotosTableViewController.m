@@ -8,10 +8,11 @@
 
 #import "PhotosTableViewController.h"
 #import "FlickrFetcherModification.h"
+#import "PhotoViewController.h"
 
 @interface PhotosTableViewController ()
 
-@property (nonatomic, strong) NSArray *photos;
+@property (strong, nonatomic) NSArray *photos;
 
 @end
 
@@ -58,10 +59,21 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Photo Cell" forIndexPath:indexPath];
     NSDictionary *photo = self.photos[indexPath.row];
-    cell.textLabel.text = [photo valueForKey:FLICKR_PHOTO_TITLE];
-    cell.detailTextLabel.text = [photo valueForKey:FLICKR_PHOTO_DESCRIPTION];
+    NSString *title = [photo valueForKey:FLICKR_PHOTO_TITLE];
+    NSString *description = [photo valueForKey:FLICKR_PHOTO_DESCRIPTION];
+    if (![description length]) description = @"Unknown";
+    if (![title length]) title = description;
+    
+    cell.textLabel.text = title;
+    cell.detailTextLabel.text = description;
     
     return cell;
+}
+
+- (void)preparePhotoViewController:(PhotoViewController *)VC forPhoto:(NSDictionary *)photo {
+    VC.imageURL = [FlickrFetcherModification URLforPhoto:photo format:FlickrPhotoFormatOriginal];
+    NSString *title = [photo valueForKey:FLICKR_PHOTO_TITLE];
+    VC.title = ([title length]) ? title : @"Unknown";
 }
 
 /*
@@ -98,14 +110,16 @@
 }
 */
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
+    if ([segue.identifier isEqualToString:@"Show Photo"] && indexPath) {
+        [self preparePhotoViewController:segue.destinationViewController forPhoto:self.photos[indexPath.row]];
+    }
 }
-*/
+
 
 @end

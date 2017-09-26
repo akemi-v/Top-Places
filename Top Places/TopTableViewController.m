@@ -12,8 +12,8 @@
 
 @interface TopTableViewController ()
 
-@property (nonatomic, strong) NSArray *countries;
-@property (nonatomic, strong) NSDictionary *placesByCountry;
+@property (strong, nonatomic) NSArray *countries;
+@property (strong, nonatomic) NSDictionary *placesByCountry;
 
 @end
 
